@@ -6,27 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Daniel Armenteros | Data Portfolio</title>
-
   <meta
     name="description"
-    content="Daniel Armenteros' portfolio showcasing projects in data analytics, machine learning, clustering, credit risk prediction, and data engineering."
+    content="Daniel Armenteros' portfolio featuring projects in data analytics, machine learning, clustering, credit risk prediction, and data engineering."
   >
-
   <meta name="theme-color" content="#0b1220">
 
   <style>
     :root {
       --bg: #f4f7fb;
       --surface: #ffffff;
-      --surface-soft: #edf3fb;
       --text: #17243b;
       --muted: #62718a;
       --primary: #315efb;
       --primary-dark: #2448c9;
       --border: #dfe7f2;
       --navy: #0b1220;
-      --navy-soft: #121f35;
-      --success: #147d64;
       --shadow: 0 16px 45px rgba(19, 39, 74, 0.08);
       --radius: 20px;
       --max-width: 1120px;
@@ -65,11 +60,12 @@
       margin-inline: auto;
     }
 
+    /* Navigation */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 18, 32, 0.94);
+      background: rgba(11, 18, 32, 0.96);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -112,6 +108,7 @@
       color: #ffffff;
     }
 
+    /* Hero */
     .hero {
       position: relative;
       overflow: hidden;
@@ -129,21 +126,6 @@
         var(--navy);
       color: #ffffff;
       padding: 100px 0 86px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 340px;
-      height: 340px;
-      right: -120px;
-      bottom: -210px;
-      border: 1px solid rgba(126, 155, 255, 0.25);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 35px rgba(126, 155, 255, 0.035),
-        0 0 0 70px rgba(126, 155, 255, 0.025);
-      pointer-events: none;
     }
 
     .hero-content {
@@ -206,10 +188,7 @@
       border-radius: 10px;
       font-weight: 750;
       font-size: 0.92rem;
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .button:hover {
@@ -251,6 +230,7 @@
       font-size: 0.82rem;
     }
 
+    /* General sections */
     section {
       padding: 82px 0;
     }
@@ -291,6 +271,7 @@
       padding-bottom: 5px;
     }
 
+    /* Project shortcuts */
     .project-shortcuts {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -307,10 +288,7 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       background: var(--surface);
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .shortcut:hover {
@@ -343,6 +321,7 @@
       margin-top: 3px;
     }
 
+    /* Project cards */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -359,9 +338,7 @@
       border-radius: var(--radius);
       background: var(--surface);
       box-shadow: 0 5px 18px rgba(19, 39, 74, 0.025);
-      transition:
-        transform 0.22s ease,
-        box-shadow 0.22s ease;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
       scroll-margin-top: 95px;
     }
 
@@ -428,7 +405,7 @@
     .visual-fallback span {
       max-width: 300px;
       font-size: 0.83rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     .speed-visual {
@@ -437,25 +414,16 @@
         linear-gradient(135deg, #101b32, #1d3e69);
     }
 
-    .credit-visual {
-      background:
-        radial-gradient(circle at 85% 10%, #b5d5ff, transparent 32%),
-        linear-gradient(135deg, #eaf2ff, #dce7fa);
-    }
-
-    .credit-visual .visual-fallback {
-      color: #17345e;
-    }
-
     .audio-visual {
       background:
         radial-gradient(circle at 50% 45%, #734be8, transparent 35%),
         linear-gradient(135deg, #171331, #30205a);
     }
 
+    /* Credit Risk image: uses images/credit-risk-workflow.png */
     .credit-risk-visual {
       display: block;
-      min-height: auto;
+      min-height: 0;
       padding: 14px;
       background: #ffffff;
       aspect-ratio: auto;
@@ -472,7 +440,6 @@
 
     .credit-risk-visual .visual-caption {
       padding: 10px 4px 2px;
-      margin: 0;
       color: #536786;
       font-size: 0.82rem;
       line-height: 1.5;
@@ -565,6 +532,7 @@
       text-underline-offset: 4px;
     }
 
+    /* Skills */
     .skills-section {
       background: #ffffff;
       border-top: 1px solid #e8edf5;
@@ -605,6 +573,7 @@
       font-size: 0.88rem;
     }
 
+    /* About */
     .about-panel {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -663,9 +632,14 @@
       margin-top: 2px;
     }
 
+    /* Contact */
     .contact-section {
       background:
-        radial-gradient(circle at 90% 20%, rgba(49, 94, 251, 0.18), transparent 30%),
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(49, 94, 251, 0.18),
+          transparent 30%
+        ),
         var(--navy);
       color: #ffffff;
       padding: 75px 0;
@@ -696,6 +670,7 @@
       flex-shrink: 0;
     }
 
+    /* Footer */
     footer {
       background: #080e19;
       color: #95a3ba;
@@ -714,11 +689,9 @@
       color: #ffffff;
     }
 
+    /* Responsive layout */
     @media (max-width: 980px) {
-      .project-shortcuts {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
+      .project-shortcuts,
       .skills-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -756,10 +729,7 @@
         padding: 60px 0;
       }
 
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .projects-grid,
       .about-panel {
         grid-template-columns: 1fr;
       }
@@ -795,6 +765,7 @@
       .contact-actions {
         align-items: stretch;
         flex-direction: column;
+        width: 100%;
       }
 
       .button {
@@ -837,6 +808,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="container hero-content">
         <div class="eyebrow">Data Analytics · Machine Learning</div>
@@ -866,7 +838,10 @@
             GitHub ↗
           </a>
 
-          <a class="button button-outline" href="mailto:daniel.armenteros.garcia@gmail.com">
+          <a
+            class="button button-outline"
+            href="mailto:daniel.armenteros.garcia@gmail.com"
+          >
             Contact me
           </a>
         </div>
@@ -881,6 +856,7 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
         <div class="section-heading">
@@ -888,14 +864,14 @@
             <div class="section-kicker">Selected work</div>
             <h2>Featured projects</h2>
             <p>
-              A selection of projects combining statistical thinking,
-              machine learning, data processing, and practical applications.
+              Projects combining statistical thinking, machine learning,
+              data processing, and practical applications.
             </p>
           </div>
-
           <div class="section-count">04 projects</div>
         </div>
 
+        <!-- Quick links to all four projects -->
         <div class="project-shortcuts">
           <a class="shortcut" href="#movie-clustering">
             <div class="shortcut-icon" aria-hidden="true">🎬</div>
@@ -944,7 +920,9 @@
               <div class="visual-fallback" style="display: none;">
                 <div class="big-icon" aria-hidden="true">🎬</div>
                 <strong>Movie Explorer</strong>
-                <span>Clustering, text analysis and content-based recommendations</span>
+                <span>
+                  Clustering, text analysis and content-based recommendations
+                </span>
               </div>
             </div>
 
@@ -992,7 +970,9 @@
               <div class="visual-fallback">
                 <div class="big-icon" aria-hidden="true">⚙️</div>
                 <strong>End-to-end Data Platform</strong>
-                <span>Ingestion · Processing · Storage · API · Analytics</span>
+                <span>
+                  Ingestion · Processing · Storage · API · Analytics
+                </span>
               </div>
             </div>
 
@@ -1040,7 +1020,7 @@
             <div class="project-visual credit-risk-visual">
               <img
                 src="images/credit-risk-workflow.png"
-                alt="Credit risk prediction workflow: loan applications below a configurable probability of default threshold are accepted automatically, while applications above the threshold are sent for manual review."
+                alt="Credit risk prediction workflow: applications below a configurable probability of default threshold can be automatically approved, while applications above the threshold are sent for manual review."
                 loading="lazy"
               >
 
@@ -1097,7 +1077,9 @@
               <div class="visual-fallback">
                 <div class="big-icon" aria-hidden="true">🎵</div>
                 <strong>Music & Audio ML</strong>
-                <span>Audio features · Classification · Interactive exploration</span>
+                <span>
+                  Audio features · Classification · Interactive exploration
+                </span>
               </div>
             </div>
 
@@ -1214,10 +1196,9 @@
 
             <p>
               Through academic and personal projects, I have worked on the
-              complete data workflow: preparing data, exploring patterns,
-              developing models, building APIs, and presenting results.
-              I am looking for opportunities to keep learning and contribute
-              to data-driven teams.
+              data workflow: preparing data, exploring patterns, developing
+              models, building APIs, and presenting results. I am looking for
+              opportunities to keep learning and contribute to data-driven teams.
             </p>
           </div>
 
@@ -1282,6 +1263,7 @@
             GitHub profile ↗
           </a>
 
+          <!-- Replace this URL with your actual LinkedIn profile URL -->
           <a
             class="button button-outline"
             href="https://www.linkedin.com/"
@@ -1295,6 +1277,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
       <span>© <span id="current-year">2026</span> Daniel Armenteros</span>
