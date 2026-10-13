@@ -1,75 +1,235 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Armenteros | Data Portfolio</title>
-  <meta name="description" content="Data Science, Machine Learning and Data Analytics portfolio.">
+  <title>Daniel Armenteros | Data & Machine Learning Portfolio</title>
+  <meta name="description" content="Daniel Armenteros' portfolio: data analytics, machine learning, statistical modeling and data engineering projects.">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 70px auto;
+      max-width: 1000px;
+      margin: 60px auto;
       padding: 0 24px;
       line-height: 1.7;
       color: #1f2937;
       background: #f8fafc;
     }
-    h1 { font-size: 2.5rem; margin-bottom: 8px; }
-    h2 { margin-top: 36px; }
-    a { color: #2563eb; }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 42px;
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: #475569;
+      font-weight: bold;
+    }
+
+    .intro {
+      max-width: 760px;
+    }
+
+    .links {
+      margin: 22px 0;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
     .project {
       background: white;
-      padding: 20px;
-      margin: 16px 0;
+      padding: 22px;
       border-radius: 12px;
       border: 1px solid #e2e8f0;
     }
-    .tag { color: #475569; font-size: 0.9rem; }
+
+    .project h3 {
+      margin-top: 0;
+      line-height: 1.4;
+    }
+
+    .tag {
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
+
 <body>
-  <h1>Daniel Armenteros García</h1>
-  <p><strong>Data Scientist | Data Analyst | Machine Learning</strong></p>
+  <header>
+    <h1>Daniel Armenteros García</h1>
+    <p class="subtitle">Data Analyst | Data Scientist | Machine Learning</p>
 
-  <p>
-    Statistician specializing in data analytics, machine learning
-    and statistical modeling. I build data-driven solutions,
-    from data processing to model deployment.
-  </p>
+    <p class="intro">
+      Statistician with a background in applied statistics, data analytics
+      and machine learning. I work with Python, SQL and data visualization
+      to transform data into useful insights, build predictive models and
+      develop reproducible data solutions.
+    </p>
 
-  <p>
-    <a href="https://github.com/dag3403">GitHub</a> ·
-    <a href="https://www.linkedin.com/">LinkedIn</a> ·
-    <a href="mailto:daniel.armenteros.garcia@gmail.com">Email me</a>
-  </p>
+    <p class="links">
+      <a href="https://github.com/dag3403" target="_blank" rel="noopener noreferrer">GitHub</a>
+      ·
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      ·
+      <a href="mailto:daniel.armenteros.garcia@gmail.com">Email</a>
+    </p>
+  </header>
 
-  <h2>Featured Projects</h2>
+  <main>
+    <h2>Featured Projects</h2>
 
-  <div class="project">
-    <h3>Movie Clustering & Recommendation System</h3>
-    <p class="tag">Python · Polars · Machine Learning · NLP</p>
-    <p>Movie clustering and content-based recommendations using
-    metadata and textual descriptions.</p>
-    <a href="https://github.com/dag3403">View project on GitHub</a>
-  </div>
+    <section class="projects">
+      <article class="project">
+        <h3>Movie Clustering & Recommendation System</h3>
+        <p class="tag">Python · Polars · Scikit-learn · NLP · TF-IDF</p>
+        <p>
+          An interactive application for exploring movie clusters and
+          generating content-based recommendations from movie metadata
+          and textual descriptions.
+        </p>
+        <a class="project-link"
+           href="https://github.com/dag3403/Movie-recommender"
+           target="_blank" rel="noopener noreferrer">
+          View project on GitHub →
+        </a>
+      </article>
 
-  <div class="project">
-    <h3>Speed Dating Analytics Platform</h3>
-    <p class="tag">PySpark · Docker · FastAPI · PostgreSQL · MinIO</p>
-    <p>An end-to-end data platform with a machine learning
-    pipeline and an API for inference.</p>
-    <a href="https://github.com/dag3403/data-platform-speeddating">
-      View repository
-    </a>
-  </div>
+      <article class="project">
+        <h3>Speed Dating Analytics Platform</h3>
+        <p class="tag">PySpark · Docker · FastAPI · PostgreSQL · MinIO</p>
+        <p>
+          An end-to-end data platform combining data processing,
+          a machine learning pipeline and an API for model inference.
+        </p>
+        <a class="project-link"
+           href="https://github.com/dag3403/data-platform-speeddating"
+           target="_blank" rel="noopener noreferrer">
+          View project on GitHub →
+        </a>
+      </article>
 
-  <h2>Contact</h2>
-  <p>
-    <a href="mailto:daniel.armenteros.garcia@gmail.com">
-      Get in touch
-    </a>
-  </p>
+      <article class="project">
+        <h3>Credit Risk Prediction</h3>
+        <p class="tag">Python · Machine Learning · FastAPI · Docker</p>
+        <p>
+          A machine learning project focused on credit risk prediction,
+          with a containerized API for serving model predictions.
+        </p>
+        <a class="project-link"
+           href="https://github.com/dag3403/credit_risk_prediction"
+           target="_blank" rel="noopener noreferrer">
+          View project on GitHub →
+        </a>
+      </article>
+
+      <article class="project">
+        <h3>Audio Analytics & Music ML</h3>
+        <p class="tag">Python · XGBoost · CatBoost · Streamlit</p>
+        <p>
+          An applied machine learning project using acoustic features
+          to classify singers, with an interactive application.
+        </p>
+        <a class="project-link"
+           href="https://github.com/dag3403/prediccion-canciones-ml"
+           target="_blank" rel="noopener noreferrer">
+          View project on GitHub →
+        </a>
+      </article>
+
+      <article class="project">
+        <h3>Student Exam Score Prediction</h3>
+        <p class="tag">Python · Data Analysis · Machine Learning</p>
+        <p>
+          A predictive modeling project exploring student-related
+          variables and their relationship with exam performance.
+        </p>
+        <a class="project-link"
+           href="https://github.com/dag3403/student-exam-score-prediction"
+           target="_blank" rel="noopener noreferrer">
+          View project on GitHub →
+        </a>
+      </article>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <p>
+        <strong>Programming & Data:</strong>
+        Python, SQL, R, Pandas, NumPy, Polars
+      </p>
+      <p>
+        <strong>Machine Learning & Statistics:</strong>
+        Scikit-learn, PyMC, statistical modeling, clustering,
+        predictive modeling, NLP
+      </p>
+      <p>
+        <strong>Data Platforms & Deployment:</strong>
+        Google Cloud, BigQuery, PySpark, Docker, FastAPI, PostgreSQL
+      </p>
+      <p>
+        <strong>Visualization & BI:</strong>
+        Power BI, Looker Studio, Metabase, Matplotlib
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Interested in data analytics, data science and machine learning
+        opportunities.
+      </p>
+      <p>
+        <a href="mailto:daniel.armenteros.garcia@gmail.com">
+          Get in touch →
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Daniel Armenteros García · Built with HTML and CSS
+  </footer>
 </body>
 </html>
+```
