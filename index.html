@@ -5,26 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Daniel Armenteros | Data Portfolio</title>
+  <title>Daniel Armenteros | Data Analytics & Machine Learning Portfolio</title>
+
   <meta
     name="description"
-    content="Daniel Armenteros' portfolio featuring projects in data analytics, machine learning, clustering, credit risk prediction, and data engineering."
+    content="Daniel Armenteros' portfolio featuring data analytics, machine learning, data engineering, clustering, and predictive modeling projects."
   >
-  <meta name="theme-color" content="#0b1220">
+
+  <meta name="theme-color" content="#101b32">
 
   <style>
     :root {
-      --bg: #f4f7fb;
-      --surface: #ffffff;
-      --text: #17243b;
-      --muted: #62718a;
-      --primary: #315efb;
-      --primary-dark: #2448c9;
-      --border: #dfe7f2;
-      --navy: #0b1220;
-      --shadow: 0 16px 45px rgba(19, 39, 74, 0.08);
-      --radius: 20px;
-      --max-width: 1120px;
+      --navy: #101b32;
+      --navy-light: #1c2d4b;
+      --blue: #4776e6;
+      --blue-light: #edf3ff;
+      --text: #202b3c;
+      --muted: #64748b;
+      --background: #f6f8fc;
+      --white: #ffffff;
+      --border: #e3e9f2;
+      --radius: 18px;
+      --shadow: 0 10px 35px rgba(20, 39, 72, 0.07);
     }
 
     * {
@@ -40,8 +42,8 @@
 
     body {
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
+        Roboto, Arial, sans-serif;
+      background: var(--background);
       color: var(--text);
       line-height: 1.65;
     }
@@ -56,139 +58,108 @@
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 40px));
-      margin-inline: auto;
+      width: min(1120px, 90%);
+      margin: 0 auto;
     }
 
-    /* Navigation */
+    /* NAVIGATION */
+
     .navbar {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 18, 32, 0.96);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .nav-inner {
-      min-height: 70px;
+      min-height: 72px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 24px;
     }
 
-    .brand {
-      color: #ffffff;
+    .logo {
+      color: var(--navy);
       font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: -0.03em;
+      font-size: 1.1rem;
       white-space: nowrap;
-    }
-
-    .brand span {
-      color: #7e9bff;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
       flex-wrap: wrap;
       gap: 24px;
-    }
-
-    .nav-links a {
-      color: #c4cee0;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
+      font-size: 0.92rem;
+      color: var(--muted);
     }
 
     .nav-links a:hover {
-      color: #ffffff;
+      color: var(--blue);
     }
 
-    /* Hero */
+    /* HERO */
+
     .hero {
-      position: relative;
-      overflow: hidden;
       background:
-        radial-gradient(
-          circle at 82% 22%,
-          rgba(49, 94, 251, 0.25),
-          transparent 32%
-        ),
-        radial-gradient(
-          circle at 10% 100%,
-          rgba(64, 119, 232, 0.13),
-          transparent 35%
-        ),
-        var(--navy);
-      color: #ffffff;
-      padding: 100px 0 86px;
+        radial-gradient(circle at 85% 20%, #2d4775 0, transparent 34%),
+        linear-gradient(135deg, #101b32, #1a3154);
+      color: var(--white);
+      padding: 100px 0 92px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
       max-width: 850px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: #a9bcff;
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      font-size: 0.76rem;
-      font-weight: 800;
+      display: inline-block;
+      color: #b9ceff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 6px 14px;
       margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 25px;
-      height: 2px;
-      background: #7896ff;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
     }
 
     .hero h1 {
-      max-width: 850px;
-      font-size: clamp(2.6rem, 6vw, 4.7rem);
-      line-height: 1.08;
-      letter-spacing: -0.065em;
-      margin-bottom: 24px;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
     }
 
     .hero h1 span {
-      color: #88a2ff;
+      color: #8fb0ff;
     }
 
-    .hero-description {
-      max-width: 720px;
-      color: #c0ccdf;
-      font-size: clamp(1rem, 2vw, 1.15rem);
+    .hero p {
+      max-width: 700px;
+      color: #d3dced;
+      font-size: 1.12rem;
       margin-bottom: 30px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 35px;
+      gap: 14px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 12px 19px;
+      padding: 12px 20px;
       border-radius: 10px;
-      font-weight: 750;
-      font-size: 0.92rem;
-      transition: transform 0.2s ease, background 0.2s ease;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: transform 0.2s, background 0.2s;
     }
 
     .button:hover {
@@ -196,216 +167,120 @@
     }
 
     .button-primary {
-      background: var(--primary);
+      background: #ffffff;
+      color: var(--navy);
+    }
+
+    .button-secondary {
       color: #ffffff;
-      border: 1px solid var(--primary);
+      border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
-    .button-primary:hover {
-      background: var(--primary-dark);
-    }
+    /* GENERAL SECTIONS */
 
-    .button-outline {
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.23);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .button-outline:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .hero-tags span {
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      background: rgba(255, 255, 255, 0.055);
-      color: #d5deed;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.82rem;
-    }
-
-    /* General sections */
     section {
-      padding: 82px 0;
+      padding: 76px 0;
     }
 
     .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
-      margin-bottom: 34px;
-    }
-
-    .section-kicker {
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 850;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      margin-bottom: 9px;
+      max-width: 720px;
+      margin-bottom: 32px;
     }
 
     .section-heading h2 {
-      font-size: clamp(1.9rem, 4vw, 2.65rem);
-      letter-spacing: -0.045em;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       line-height: 1.2;
-      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 12px;
     }
 
     .section-heading p {
       color: var(--muted);
-      max-width: 660px;
     }
 
-    .section-count {
-      color: var(--muted);
-      font-size: 0.85rem;
-      white-space: nowrap;
-      padding-bottom: 5px;
+    /* PROJECT SHORTCUTS */
+
+    .featured {
+      padding-top: 44px;
+      padding-bottom: 30px;
     }
 
-    /* Project shortcuts */
     .project-shortcuts {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 14px;
-      margin-bottom: 25px;
     }
 
     .shortcut {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 82px;
-      padding: 16px;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 118px;
+      padding: 18px;
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: var(--surface);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: var(--white);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .shortcut:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-      border-color: #b7c7ff;
-    }
-
-    .shortcut-icon {
-      width: 43px;
-      height: 43px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #eaf0ff;
-      font-size: 1.3rem;
-    }
-
-    .shortcut strong {
-      display: block;
-      font-size: 0.88rem;
-      line-height: 1.35;
-    }
-
-    .shortcut small {
-      display: block;
-      color: var(--muted);
-      font-size: 0.76rem;
-      margin-top: 3px;
-    }
-
-    /* Project cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .project-card {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: 0 5px 18px rgba(19, 39, 74, 0.025);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-      scroll-margin-top: 95px;
-    }
-
-    .project-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
     }
 
-    .project-visual {
-      position: relative;
-      min-height: 220px;
-      aspect-ratio: 16 / 9;
+    .shortcut-number {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .shortcut strong {
+      font-size: 0.94rem;
+      line-height: 1.4;
+      color: var(--navy);
+    }
+
+    /* PROJECT CARDS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
       overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      scroll-margin-top: 100px;
+    }
+
+    .project-visual {
+      min-height: 230px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
-      background: #eaf0fb;
+      padding: 18px;
+      background: #e9eff8;
+      overflow: hidden;
     }
 
     .project-visual img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: 225px;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     .movie-visual {
-      padding: 0;
-      background: #111b2f;
-    }
-
-    .movie-visual img {
-      position: absolute;
-      inset: 0;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .visual-fallback {
-      width: 100%;
-      height: 100%;
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 13px;
-      color: #ffffff;
-      text-align: center;
-      padding: 24px;
-    }
-
-    .visual-fallback .big-icon {
-      font-size: 3.1rem;
-      line-height: 1;
-    }
-
-    .visual-fallback strong {
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .visual-fallback span {
-      max-width: 300px;
-      font-size: 0.83rem;
-      opacity: 0.85;
+      background: #ffffff;
     }
 
     .speed-visual {
@@ -420,13 +295,41 @@
         linear-gradient(135deg, #171331, #30205a);
     }
 
-    /* Credit Risk image: uses images/credit-risk-workflow.png */
+    .exam-visual {
+      background:
+        radial-gradient(circle at 85% 20%, #6aa7ee, transparent 35%),
+        linear-gradient(135deg, #102849, #245c83);
+    }
+
+    .visual-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .big-icon {
+      font-size: 3.2rem;
+      line-height: 1.2;
+    }
+
+    .visual-fallback strong {
+      font-size: 1.2rem;
+    }
+
+    .visual-fallback span {
+      color: #d4def1;
+      font-size: 0.9rem;
+    }
+
     .credit-risk-visual {
       display: block;
       min-height: 0;
       padding: 14px;
       background: #ffffff;
-      aspect-ratio: auto;
     }
 
     .credit-risk-visual img {
@@ -438,105 +341,99 @@
       border-radius: 8px;
     }
 
-    .credit-risk-visual .visual-caption {
+    .visual-caption {
       padding: 10px 4px 2px;
-      color: #536786;
+      color: var(--muted);
       font-size: 0.82rem;
       line-height: 1.5;
       text-align: center;
     }
 
-    .project-body {
+    .project-content {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       flex: 1;
       padding: 25px;
     }
 
     .project-type {
-      display: inline-flex;
-      align-self: flex-start;
-      color: #3154c8;
-      background: #edf1ff;
-      border-radius: 999px;
-      padding: 5px 10px;
-      margin-bottom: 12px;
-      font-size: 0.72rem;
+      color: var(--blue);
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.035em;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
-    .project-body h3 {
+    .project-content h3 {
+      color: var(--navy);
       font-size: 1.35rem;
-      letter-spacing: -0.035em;
-      line-height: 1.3;
+      line-height: 1.35;
       margin-bottom: 12px;
     }
 
-    .project-body > p {
+    .project-content p {
       color: var(--muted);
       font-size: 0.94rem;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+    }
+
+    .project-content h4 {
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin: 2px 0 8px;
     }
 
     .project-highlights {
-      padding-left: 18px;
-      margin-bottom: 20px;
-      color: #43536d;
-      font-size: 0.87rem;
+      padding-left: 19px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .project-highlights li + li {
-      margin-top: 6px;
+    .project-highlights li {
+      margin-bottom: 5px;
     }
 
-    .tech-tags {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
       margin-top: auto;
-      padding-top: 2px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
-    .tech-tags span {
-      border: 1px solid #e1e8f3;
-      background: #f7f9fd;
-      color: #465773;
+    .tag {
+      color: #3a5277;
+      background: var(--blue-light);
       border-radius: 7px;
       padding: 5px 9px;
-      font-size: 0.75rem;
+      font-size: 0.77rem;
       font-weight: 650;
     }
 
     .project-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      border-top: 1px solid #edf1f7;
-      padding-top: 18px;
+      gap: 12px;
+      margin-top: 2px;
     }
 
     .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.87rem;
-      font-weight: 800;
-      color: var(--primary);
+      color: var(--blue);
+      font-size: 0.9rem;
+      font-weight: 750;
     }
 
     .project-link:hover {
-      color: var(--primary-dark);
       text-decoration: underline;
-      text-underline-offset: 4px;
     }
 
-    /* Skills */
+    /* SKILLS */
+
     .skills-section {
       background: #ffffff;
-      border-top: 1px solid #e8edf5;
-      border-bottom: 1px solid #e8edf5;
     }
 
     .skills-grid {
@@ -546,257 +443,158 @@
     }
 
     .skill-card {
+      padding: 23px;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      background: #ffffff;
-    }
-
-    .skill-icon {
-      display: grid;
-      place-items: center;
-      width: 46px;
-      height: 46px;
-      border-radius: 13px;
-      background: #edf2ff;
-      font-size: 1.35rem;
-      margin-bottom: 17px;
+      border-radius: 15px;
+      background: var(--background);
     }
 
     .skill-card h3 {
-      font-size: 1.02rem;
+      font-size: 1.05rem;
+      color: var(--navy);
       margin-bottom: 10px;
     }
 
     .skill-card p {
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.91rem;
     }
 
-    /* About */
-    .about-panel {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 35px;
-      align-items: center;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: clamp(25px, 5vw, 45px);
-      box-shadow: 0 6px 22px rgba(19, 39, 74, 0.025);
+    /* ABOUT */
+
+    .about-content {
+      max-width: 800px;
     }
 
-    .about-panel h2 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      line-height: 1.2;
-      letter-spacing: -0.04em;
-      margin-bottom: 16px;
-    }
-
-    .about-panel p {
+    .about-content p {
       color: var(--muted);
+      margin-bottom: 15px;
     }
 
-    .about-panel p + p {
-      margin-top: 12px;
-    }
+    /* CONTACT */
 
-    .about-facts {
-      display: grid;
-      gap: 12px;
-    }
-
-    .fact {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 15px;
-      border: 1px solid #e8edf5;
-      border-radius: 12px;
-      background: #f8faff;
-    }
-
-    .fact-icon {
-      font-size: 1.1rem;
-    }
-
-    .fact strong {
-      display: block;
-      font-size: 0.88rem;
-    }
-
-    .fact span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 2px;
-    }
-
-    /* Contact */
     .contact-section {
-      background:
-        radial-gradient(
-          circle at 90% 20%,
-          rgba(49, 94, 251, 0.18),
-          transparent 30%
-        ),
-        var(--navy);
+      padding: 65px 0;
       color: #ffffff;
-      padding: 75px 0;
+      background: var(--navy);
     }
 
-    .contact-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-    }
-
-    .contact-content h2 {
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
-      letter-spacing: -0.045em;
+    .contact-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       margin-bottom: 12px;
     }
 
-    .contact-content p {
-      max-width: 630px;
-      color: #c0ccdf;
+    .contact-section p {
+      color: #cbd5e1;
+      margin-bottom: 24px;
     }
 
-    .contact-actions {
+    .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      flex-shrink: 0;
+      gap: 14px;
     }
 
-    /* Footer */
+    .contact-links a {
+      display: inline-block;
+      padding: 10px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 9px;
+      font-weight: 650;
+    }
+
+    .contact-links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
     footer {
-      background: #080e19;
-      color: #95a3ba;
-      padding: 22px 0;
-      font-size: 0.82rem;
+      background: #0b1425;
+      color: #aebbd0;
+      padding: 20px 0;
+      font-size: 0.85rem;
+      text-align: center;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    /* RESPONSIVE */
 
-    footer a:hover {
-      color: #ffffff;
-    }
+    @media (max-width: 1000px) {
+      .project-shortcuts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
 
-    /* Responsive layout */
-    @media (max-width: 980px) {
-      .project-shortcuts,
       .skills-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+    }
 
-      .section-heading {
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding: 14px 0;
         align-items: flex-start;
         flex-direction: column;
         gap: 10px;
       }
 
-      .contact-content {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .nav-inner {
-        padding: 15px 0;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
-      }
-
       .nav-links {
-        justify-content: flex-start;
-        gap: 15px;
+        gap: 14px;
+        font-size: 0.86rem;
       }
 
       .hero {
-        padding: 72px 0 62px;
+        padding: 72px 0;
       }
 
       section {
-        padding: 60px 0;
+        padding: 55px 0;
       }
 
-      .projects-grid,
-      .about-panel {
+      .projects-grid {
         grid-template-columns: 1fr;
+      }
+
+      .project-shortcuts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .project-visual {
         min-height: 190px;
       }
 
-      .project-body {
-        padding: 22px;
+      .project-visual img {
+        height: 190px;
       }
     }
 
-    @media (max-width: 460px) {
-      .container {
-        width: min(100% - 28px, var(--max-width));
-      }
-
-      .project-shortcuts,
-      .skills-grid {
+    @media (max-width: 420px) {
+      .skills-grid,
+      .project-shortcuts {
         grid-template-columns: 1fr;
       }
 
-      .shortcut {
-        min-height: 72px;
-      }
-
-      .hero h1 {
-        font-size: 2.55rem;
+      .project-content {
+        padding: 20px;
       }
 
       .hero-actions,
-      .contact-actions {
+      .contact-links {
+        flex-direction: column;
         align-items: stretch;
-        flex-direction: column;
-        width: 100%;
       }
 
-      .button {
-        width: 100%;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+      .button,
+      .contact-links a {
+        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a class="brand" href="#home">Daniel<span>.</span></a>
+      <a class="logo" href="#home">Daniel Armenteros</a>
 
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#projects">Projects</a>
@@ -808,50 +606,71 @@
   </header>
 
   <main>
+
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="container hero-content">
-        <div class="eyebrow">Data Analytics · Machine Learning</div>
+        <div class="eyebrow">Statistics · Data Analytics · Machine Learning</div>
 
         <h1>
           Turning data into
           <span>meaningful insights.</span>
         </h1>
 
-        <p class="hero-description">
-          I'm Daniel Armenteros, a Statistics graduate and Applied Statistics
-          postgraduate student interested in data analytics, machine learning,
-          and building data-driven solutions to real-world problems.
+        <p>
+          I'm a Statistics graduate and Applied Statistics master's student
+          interested in data analytics, machine learning, predictive modeling
+          and data engineering. I build practical projects that transform data
+          into insights, models and useful applications.
         </p>
 
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">
-            Explore my projects <span aria-hidden="true">↘</span>
+            Explore my projects
           </a>
 
           <a
-            class="button button-outline"
+            class="button button-secondary"
             href="https://github.com/dag3403"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub ↗
-          </a>
-
-          <a
-            class="button button-outline"
-            href="mailto:daniel.armenteros.garcia@gmail.com"
-          >
-            Contact me
+            View GitHub profile ↗
           </a>
         </div>
+      </div>
+    </section>
 
-        <div class="hero-tags" aria-label="Main skills">
-          <span>Python</span>
-          <span>SQL</span>
-          <span>Machine Learning</span>
-          <span>Data Visualization</span>
-          <span>Data Engineering</span>
+    <!-- PROJECT SHORTCUTS -->
+    <section class="featured" aria-label="Featured projects">
+      <div class="container">
+        <div class="project-shortcuts">
+
+          <a class="shortcut" href="#movie-clustering">
+            <span class="shortcut-number">PROJECT 01</span>
+            <strong>Movie Clustering & Recommendation</strong>
+          </a>
+
+          <a class="shortcut" href="#speed-dating">
+            <span class="shortcut-number">PROJECT 02</span>
+            <strong>Speed Dating Analytics Platform</strong>
+          </a>
+
+          <a class="shortcut" href="#credit-risk">
+            <span class="shortcut-number">PROJECT 03</span>
+            <strong>Credit Risk Prediction</strong>
+          </a>
+
+          <a class="shortcut" href="#audio-ml">
+            <span class="shortcut-number">PROJECT 04</span>
+            <strong>Audio Analytics & Music ML</strong>
+          </a>
+
+          <a class="shortcut" href="#student-exam">
+            <span class="shortcut-number">PROJECT 05</span>
+            <strong>Student Exam Score Prediction</strong>
+          </a>
+
         </div>
       </div>
     </section>
@@ -859,96 +678,53 @@
     <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
+
         <div class="section-heading">
-          <div>
-            <div class="section-kicker">Selected work</div>
-            <h2>Featured projects</h2>
-            <p>
-              Projects combining statistical thinking, machine learning,
-              data processing, and practical applications.
-            </p>
-          </div>
-          <div class="section-count">04 projects</div>
-        </div>
-
-        <!-- Quick links to all four projects -->
-        <div class="project-shortcuts">
-          <a class="shortcut" href="#movie-clustering">
-            <div class="shortcut-icon" aria-hidden="true">🎬</div>
-            <div>
-              <strong>Movie Clustering</strong>
-              <small>Recommendation system</small>
-            </div>
-          </a>
-
-          <a class="shortcut" href="#speed-dating">
-            <div class="shortcut-icon" aria-hidden="true">⚙️</div>
-            <div>
-              <strong>Speed Dating</strong>
-              <small>Data platform & API</small>
-            </div>
-          </a>
-
-          <a class="shortcut" href="#credit-risk">
-            <div class="shortcut-icon" aria-hidden="true">🏦</div>
-            <div>
-              <strong>Credit Risk</strong>
-              <small>Predictive modeling</small>
-            </div>
-          </a>
-
-          <a class="shortcut" href="#audio-ml">
-            <div class="shortcut-icon" aria-hidden="true">🎵</div>
-            <div>
-              <strong>Audio Analytics</strong>
-              <small>Music machine learning</small>
-            </div>
-          </a>
+          <h2>Featured Projects</h2>
+          <p>
+            Selected projects showcasing my experience with data preparation,
+            exploratory analysis, machine learning, deployment and visualization.
+          </p>
         </div>
 
         <div class="projects-grid">
+
           <!-- PROJECT 1: MOVIE CLUSTERING -->
           <article class="project-card" id="movie-clustering">
+
             <div class="project-visual movie-visual">
               <img
                 src="https://raw.githubusercontent.com/dag3403/Movie-recommender/main/docs/images/movie-explorer.png"
-                alt="Movie clustering and recommendation application interface"
+                alt="Movie exploration and content-based recommendation application"
                 loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               >
-
-              <div class="visual-fallback" style="display: none;">
-                <div class="big-icon" aria-hidden="true">🎬</div>
-                <strong>Movie Explorer</strong>
-                <span>
-                  Clustering, text analysis and content-based recommendations
-                </span>
-              </div>
             </div>
 
-            <div class="project-body">
-              <span class="project-type">MACHINE LEARNING · NLP</span>
+            <div class="project-content">
+              <div class="project-type">Machine Learning · NLP</div>
 
               <h3>Movie Clustering & Recommendation System</h3>
 
               <p>
-                An interactive movie exploration project that groups films
-                using their metadata and textual descriptions, and recommends
-                similar titles based on movie characteristics or plot descriptions.
+                A movie analysis project that explores groups of similar films
+                and recommends titles based on their metadata or textual
+                descriptions.
               </p>
 
+              <h4>Key features</h4>
               <ul class="project-highlights">
-                <li>Clustering based on movie metadata and text.</li>
-                <li>TF-IDF text representation for description similarity.</li>
-                <li>Content-based recommendations for a selected movie.</li>
+                <li>Movie data preparation and feature engineering.</li>
+                <li>Clustering based on movie characteristics.</li>
+                <li>TF-IDF text representation for descriptions.</li>
+                <li>Content-based recommendations and interactive exploration.</li>
               </ul>
 
-              <div class="tech-tags">
-                <span>Python</span>
-                <span>Polars</span>
-                <span>Scikit-learn</span>
-                <span>TF-IDF</span>
-                <span>NLP</span>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Polars</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">TF-IDF</span>
+                <span class="tag">NLP</span>
               </div>
 
               <div class="project-links">
@@ -958,7 +734,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View repository ↗
+                  GitHub Repository ↗
                 </a>
               </div>
             </div>
@@ -966,40 +742,46 @@
 
           <!-- PROJECT 2: SPEED DATING -->
           <article class="project-card" id="speed-dating">
+
             <div class="project-visual speed-visual">
+              <!--
+                To preserve your previous Speed Dating image, replace this
+                visual-fallback with the original image element and its src
+                from your previous index.html.
+              -->
               <div class="visual-fallback">
                 <div class="big-icon" aria-hidden="true">⚙️</div>
                 <strong>End-to-end Data Platform</strong>
-                <span>
-                  Ingestion · Processing · Storage · API · Analytics
-                </span>
+                <span>Ingestion · Processing · Storage · API · Analytics</span>
               </div>
             </div>
 
-            <div class="project-body">
-              <span class="project-type">DATA ENGINEERING · DEPLOYMENT</span>
+            <div class="project-content">
+              <div class="project-type">Data Engineering · Deployment</div>
 
               <h3>Speed Dating Analytics Platform</h3>
 
               <p>
-                An end-to-end data platform designed to process Speed Dating
-                data, run distributed transformations, store results, and expose
-                machine learning predictions through an API.
+                An end-to-end data platform combining data processing,
+                object storage, a relational database, an API and analytical
+                tools in a Docker-based environment.
               </p>
 
+              <h4>Key features</h4>
               <ul class="project-highlights">
-                <li>Data processing with Apache Spark.</li>
+                <li>Data processing and ETL workflows using Apache Spark.</li>
+                <li>Data storage with MinIO and PostgreSQL.</li>
+                <li>Model inference exposed through a FastAPI service.</li>
                 <li>Containerized services orchestrated with Docker Compose.</li>
-                <li>FastAPI inference service and PostgreSQL/MinIO integration.</li>
               </ul>
 
-              <div class="tech-tags">
-                <span>Python</span>
-                <span>PySpark</span>
-                <span>Docker</span>
-                <span>FastAPI</span>
-                <span>PostgreSQL</span>
-                <span>MinIO</span>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">PySpark</span>
+                <span class="tag">Docker</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MinIO</span>
               </div>
 
               <div class="project-links">
@@ -1009,7 +791,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View repository ↗
+                  GitHub Repository ↗
                 </a>
               </div>
             </div>
@@ -1017,6 +799,7 @@
 
           <!-- PROJECT 3: CREDIT RISK -->
           <article class="project-card" id="credit-risk">
+
             <div class="project-visual credit-risk-visual">
               <img
                 src="images/credit-risk-workflow.png"
@@ -1025,37 +808,35 @@
               >
 
               <p class="visual-caption">
-                Predict default risk · Automate low-risk decisions ·
-                Review higher-risk applications
+                Predict default risk · Apply a configurable threshold ·
+                Route higher-risk applications for review
               </p>
             </div>
 
-            <div class="project-body">
-              <span class="project-type">PREDICTIVE ANALYTICS · FINANCE</span>
+            <div class="project-content">
+              <div class="project-type">Predictive Modeling · API</div>
 
               <h3>Credit Risk Prediction</h3>
 
               <p>
-                A machine learning model that estimates the probability of
-                loan default to support credit assessment. Applications below
-                a configurable risk threshold can be automatically approved,
-                while those above it are flagged for manual review. This
-                approach aims to reduce the team's workload while keeping
-                higher-risk cases under human supervision.
+                A machine learning project designed to estimate the probability
+                of credit default and support loan application decision-making.
               </p>
 
+              <h4>Key features</h4>
               <ul class="project-highlights">
-                <li>Estimate the probability of default for each application.</li>
-                <li>Apply a configurable threshold to support credit decisions.</li>
-                <li>Route higher-risk applications to manual review.</li>
+                <li>Predictive modeling for credit default risk.</li>
+                <li>Probability-based assessment against a configurable threshold.</li>
+                <li>Applications below the threshold can be approved automatically.</li>
+                <li>Applications above the threshold are routed for manual review.</li>
               </ul>
 
-              <div class="tech-tags">
-                <span>Python</span>
-                <span>Machine Learning</span>
-                <span>Scikit-learn</span>
-                <span>FastAPI</span>
-                <span>Docker</span>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Docker</span>
               </div>
 
               <div class="project-links">
@@ -1065,7 +846,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View repository ↗
+                  GitHub Repository ↗
                 </a>
               </div>
             </div>
@@ -1073,39 +854,44 @@
 
           <!-- PROJECT 4: AUDIO / MUSIC ML -->
           <article class="project-card" id="audio-ml">
+
             <div class="project-visual audio-visual">
+              <!--
+                To preserve your previous Audio/Music image, replace this
+                visual-fallback with the original image element and its src
+                from your previous index.html.
+              -->
               <div class="visual-fallback">
                 <div class="big-icon" aria-hidden="true">🎵</div>
                 <strong>Music & Audio ML</strong>
-                <span>
-                  Audio features · Classification · Interactive exploration
-                </span>
+                <span>Audio features · Classification · Interactive exploration</span>
               </div>
             </div>
 
-            <div class="project-body">
-              <span class="project-type">MACHINE LEARNING · AUDIO</span>
+            <div class="project-content">
+              <div class="project-type">Machine Learning · Audio Analytics</div>
 
               <h3>Audio Analytics & Music ML</h3>
 
               <p>
-                A machine learning project exploring audio-related features
-                and music data to build predictive models and investigate
-                patterns that distinguish artists or musical tracks.
+                A machine learning project using acoustic features to explore
+                music data and classify artists through predictive models.
               </p>
 
+              <h4>Key features</h4>
               <ul class="project-highlights">
-                <li>Feature-based analysis of music data.</li>
-                <li>Classification experiments with gradient boosting models.</li>
-                <li>Interactive exploration using Streamlit.</li>
+                <li>Exploratory analysis of acoustic features.</li>
+                <li>Feature-based artist classification.</li>
+                <li>Modeling with XGBoost and CatBoost.</li>
+                <li>Interactive data exploration using Streamlit.</li>
               </ul>
 
-              <div class="tech-tags">
-                <span>Python</span>
-                <span>Pandas</span>
-                <span>XGBoost</span>
-                <span>CatBoost</span>
-                <span>Streamlit</span>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">CatBoost</span>
+                <span class="tag">Streamlit</span>
               </div>
 
               <div class="project-links">
@@ -1115,65 +901,112 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View repository ↗
+                  GitHub Repository ↗
                 </a>
               </div>
             </div>
           </article>
+
+          <!-- PROJECT 5: STUDENT EXAM SCORE PREDICTION -->
+          <article class="project-card" id="student-exam">
+
+            <div class="project-visual exam-visual">
+              <div class="visual-fallback">
+                <div class="big-icon" aria-hidden="true">🎓</div>
+                <strong>Student Exam Score Prediction</strong>
+                <span>Educational Data · Regression · Model Evaluation</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-type">Data Science · Predictive Modeling</div>
+
+              <h3>Student Exam Score Prediction</h3>
+
+              <p>
+                A predictive modeling project focused on estimating student
+                exam scores from available student-related data and exploring
+                the factors associated with academic performance.
+              </p>
+
+              <h4>Project focus</h4>
+              <ul class="project-highlights">
+                <li>Exploratory data analysis and data preparation.</li>
+                <li>Investigation of relationships between input variables and exam scores.</li>
+                <li>Predictive modeling for numerical score estimation.</li>
+                <li>Model evaluation to assess predictive performance.</li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Regression</span>
+              </div>
+
+              <div class="project-links">
+                <a
+                  class="project-link"
+                  href="https://github.com/dag3403/student-exam-score-prediction"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repository ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS -->
+    <!-- SKILLS -->
     <section class="skills-section" id="skills">
       <div class="container">
+
         <div class="section-heading">
-          <div>
-            <div class="section-kicker">Technical toolkit</div>
-            <h2>Skills & technologies</h2>
-            <p>
-              Tools and methods used across my analytics, machine learning,
-              and data platform projects.
-            </p>
-          </div>
+          <h2>Technical Skills</h2>
+          <p>
+            Tools and technologies I use across data analysis, statistical
+            modeling, machine learning and data platforms.
+          </p>
         </div>
 
         <div class="skills-grid">
+
           <article class="skill-card">
-            <div class="skill-icon" aria-hidden="true">💻</div>
-            <h3>Programming & Data</h3>
+            <h3>Programming & Data Analysis</h3>
             <p>
-              Python, SQL, R, Pandas, NumPy, Polars, data cleaning,
-              exploratory data analysis, and data transformation.
+              Python, SQL, R, Pandas, NumPy, Polars, exploratory data analysis,
+              data cleaning and feature engineering.
             </p>
           </article>
 
           <article class="skill-card">
-            <div class="skill-icon" aria-hidden="true">🧠</div>
             <h3>Statistics & Machine Learning</h3>
             <p>
-              Scikit-learn, clustering, predictive modeling, feature
-              engineering, NLP, model evaluation, and statistical analysis.
+              Statistical modeling, Scikit-learn, clustering, NLP,
+              predictive modeling, model evaluation and PyMC.
             </p>
           </article>
 
           <article class="skill-card">
-            <div class="skill-icon" aria-hidden="true">🔧</div>
             <h3>Data Engineering & Cloud</h3>
             <p>
               PySpark, Docker, FastAPI, PostgreSQL, Google Cloud Platform,
-              BigQuery, and data pipeline development.
+              BigQuery and MinIO.
             </p>
           </article>
 
           <article class="skill-card">
-            <div class="skill-icon" aria-hidden="true">📊</div>
-            <h3>Analytics & Visualization</h3>
+            <h3>BI & Visualization</h3>
             <p>
-              Power BI, Looker Studio, Metabase, Matplotlib,
-              dashboards, KPI reporting, and communicating insights.
+              Power BI, Looker Studio, Metabase, Matplotlib and
+              data visualization for communicating insights.
             </p>
           </article>
+
         </div>
       </div>
     </section>
@@ -1181,91 +1014,59 @@
     <!-- ABOUT -->
     <section id="about">
       <div class="container">
-        <div class="about-panel">
-          <div>
-            <div class="section-kicker">A little about me</div>
 
-            <h2>Statistics, data, and practical problem-solving.</h2>
+        <div class="section-heading">
+          <h2>About Me</h2>
+        </div>
 
-            <p>
-              I graduated in Statistics from the University of Granada and
-              am pursuing a Master's degree in Applied Statistics. My interests
-              include data analysis, statistical modeling, machine learning,
-              and turning complex datasets into useful insights.
-            </p>
+        <div class="about-content">
+          <p>
+            I have a degree in Statistics from the University of Granada and
+            am pursuing a Master's in Applied Statistics. My background combines
+            statistical reasoning, programming and machine learning.
+          </p>
 
-            <p>
-              Through academic and personal projects, I have worked on the
-              data workflow: preparing data, exploring patterns, developing
-              models, building APIs, and presenting results. I am looking for
-              opportunities to keep learning and contribute to data-driven teams.
-            </p>
-          </div>
+          <p>
+            I am interested in opportunities in data analytics and data science
+            where I can transform raw data into actionable insights, develop
+            predictive models and contribute to data-driven decisions.
+          </p>
 
-          <div class="about-facts">
-            <div class="fact">
-              <div class="fact-icon" aria-hidden="true">🎓</div>
-              <div>
-                <strong>Statistics graduate</strong>
-                <span>University of Granada</span>
-              </div>
-            </div>
-
-            <div class="fact">
-              <div class="fact-icon" aria-hidden="true">📈</div>
-              <div>
-                <strong>Applied Statistics</strong>
-                <span>Master's studies</span>
-              </div>
-            </div>
-
-            <div class="fact">
-              <div class="fact-icon" aria-hidden="true">🚀</div>
-              <div>
-                <strong>Career interests</strong>
-                <span>Data Analyst · Data Scientist · Machine Learning</span>
-              </div>
-            </div>
-          </div>
+          <p>
+            Through personal projects and practical experience, I am developing
+            my skills in the full data workflow, from data preparation and
+            analysis to model deployment and visualization.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact-section" id="contact">
-      <div class="container contact-content">
-        <div>
-          <div class="section-kicker">Get in touch</div>
+      <div class="container">
 
-          <h2>Let's talk about data.</h2>
+        <h2>Let's Connect</h2>
 
-          <p>
-            I'm interested in opportunities where I can apply statistics,
-            analytics, and machine learning to solve practical problems.
-            Feel free to get in touch or explore my work on GitHub.
-          </p>
-        </div>
+        <p>
+          Interested in working together or discussing a data project?
+          Feel free to get in touch.
+        </p>
 
-        <div class="contact-actions">
-          <a
-            class="button button-primary"
-            href="mailto:daniel.armenteros.garcia@gmail.com"
-          >
-            Send me an email ↗
+        <div class="contact-links">
+          <a href="mailto:daniel.armenteros.garcia@gmail.com">
+            Email Me ↗
           </a>
 
           <a
-            class="button button-outline"
             href="https://github.com/dag3403"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub profile ↗
+            GitHub ↗
           </a>
 
-          <!-- Replace this URL with your actual LinkedIn profile URL -->
+          <!-- Replace this URL with your actual LinkedIn profile URL. -->
           <a
-            class="button button-outline"
             href="https://www.linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -1275,13 +1076,13 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <div class="container footer-inner">
-      <span>© <span id="current-year">2026</span> Daniel Armenteros</span>
-      <span>Built with HTML & CSS · Hosted on GitHub Pages</span>
+    <div class="container">
+      © <span id="current-year">2026</span> Daniel Armenteros · Data Analytics & Machine Learning Portfolio
     </div>
   </footer>
 
@@ -1289,6 +1090,7 @@
     document.getElementById("current-year").textContent =
       new Date().getFullYear();
   </script>
+
 </body>
 </html>
 ```
